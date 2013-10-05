@@ -11,34 +11,34 @@ public abstract class AbstractDataLoader<E> {
 	protected Dataset dataset;
 	protected Data data;
 	protected String path;
-	public AbstractDataLoader(String path, CharSequence attributeSequence)
-	{
+
+	public AbstractDataLoader(String path, CharSequence attributeSequence) {
 		this.path = path;
 		this.attributeSequence = attributeSequence;
 	}
-	public String[] loadDataStringArray() throws IOException{
-	       String[] output;
-	       List<E> entity = loadData();
-	       output = new String[entity.size()];
-	       int count=0;
-	       for(E e:entity){
-	           output[count] = e.toString();
-	           count++;
-	       }
-	       return output;
-	   }
+
+	public String[] loadDataStringArray() throws IOException {
+		String[] output;
+		List<E> entity = loadData();
+		output = new String[entity.size()];
+		int count = 0;
+		for (E e : entity) {
+			output[count] = e.toString();
+			count++;
+		}
+		return output;
+	}
 
 	public abstract List<E> loadData() throws IOException;
 
 	public Data getData() {
-		try{
-
-	        this.rawdata = loadDataStringArray();
-	        dataset = DataLoader.generateDataset(this.attributeSequence, false,this.rawdata );
-	        this.data = DataLoader.loadData(dataset, this.rawdata);
-        }catch(DescriptorException e){
-            e.printStackTrace();
-        } catch (IOException e) {
+		try {
+			this.rawdata = loadDataStringArray();
+			dataset = DataLoader.generateDataset(this.attributeSequence, false, this.rawdata);
+			this.data = DataLoader.loadData(dataset, this.rawdata);
+		} catch (DescriptorException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return data;

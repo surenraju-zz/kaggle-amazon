@@ -1,4 +1,4 @@
-package com.kaggle.adzuna;
+package com.kaggle.suren;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
