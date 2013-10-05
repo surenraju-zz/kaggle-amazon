@@ -26,7 +26,7 @@ public class RandomForestClassifier {
 	private final static String testDataPath = "data/amazon/data/test.csv";
 	private final static String resultDataPath = "data/amazon/results/results.csv";
 
-	public static void builClassifier() {
+	public static void buildClassifier() {
 		int m = (int) Math.floor(Maths.log(2, trainData.getDataset().nbAttributes()) + 1);
 		Random rng = RandomUtils.getRandom();
 		DefaultTreeBuilder treeBuilder = new DefaultTreeBuilder();
@@ -64,7 +64,7 @@ public class RandomForestClassifier {
 		dataLoader = new AmazonDataLoader(testDataPath, "L N N N N N N N N N");
 		testData = dataLoader.getData();
 
-		builClassifier();
+		buildClassifier();
 		testClassifier();
 
 	}

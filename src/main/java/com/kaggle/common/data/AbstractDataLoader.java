@@ -2,8 +2,11 @@ package com.kaggle.common.data;
 
 import java.io.IOException;
 import java.util.List;
-import org.apache.mahout.classifier.df.data.*;
-import java.util.regex.Pattern;
+
+import org.apache.mahout.classifier.df.data.Data;
+import org.apache.mahout.classifier.df.data.DataLoader;
+import org.apache.mahout.classifier.df.data.Dataset;
+import org.apache.mahout.classifier.df.data.DescriptorException;
 
 public abstract class AbstractDataLoader<E> {
 	protected String[] rawdata;

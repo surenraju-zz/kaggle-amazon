@@ -46,6 +46,7 @@ public class AmazonDataLoader extends AbstractDataLoader<Employee> {
 				employeeData.add(employee);
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			br.close();
 		}
